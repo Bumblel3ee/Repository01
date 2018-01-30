@@ -38,7 +38,7 @@ public class Server {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			try {
+			try { 
 				br.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
