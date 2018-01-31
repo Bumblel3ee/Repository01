@@ -135,7 +135,7 @@ public class ServerChat {
 					try {
 						this.close();
 						System.out.println("End server receiver");
-						e.printStackTrace();
+						//e.printStackTrace();
 						break;
 					} catch (IOException e1) {
 						
