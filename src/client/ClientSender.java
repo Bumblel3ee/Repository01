@@ -8,7 +8,7 @@ import java.net.Socket;
 public class ClientSender {
 	public static void main(String[] args) {
 
-		String ip = "70.12.111.130";
+		String ip = "70.12.111.135";
 		int port = 7777;
 		Socket socket = null;
 		OutputStream os = null;
