@@ -32,7 +32,7 @@ public class Server {
 				inr = new InputStreamReader(in);
 				br = new BufferedReader(inr);
 				
-				System.out.println(br.readLine() + " πŸ∫∏ ∏€√ª¿Ã ");
+				System.out.println(br.readLine() + " fool");
 				System.out.println("End sever ");
 			}
 		} catch (IOException e) {
@@ -57,13 +57,13 @@ public class Server {
 				e.printStackTrace();
 			}
 			try {
-				socket.close();
+				serverSocket.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try {
-				serverSocket.close();
+				socket.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

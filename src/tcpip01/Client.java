@@ -22,7 +22,7 @@ public class Client {
 			os = socket.getOutputStream();
 			osw = new OutputStreamWriter(os);// for korean and etc
 			osw.write("¸®ÇØ¸²");
-			System.out.println("sned Complete");
+			System.out.println("send Complete");
 		} catch (IOException e) {
  
 			e.printStackTrace();
