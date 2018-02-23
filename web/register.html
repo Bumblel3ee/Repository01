@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-select.css">
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Resale Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<!--fonts-->
+<link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Brush+Script"rel="stylesheet">
+<!--//fonts-->	
+<!-- js -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- js -->
+<!-- style -->
+<style>
+	span{
+		color : red;
+	}
+	table{
+		margin : 0 auto;
+		background-color:"#FFC8C3";
+		//padding: 5px 0 5px 0;
+	}
+	h1{
+		text-align:center;
+	
+		font-family: 'Indie Flower', cursive;
+	}
+</style>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-select.js"></script>
+<script>
+  $(document).ready(function () {
+    var mySelect = $('#first-disabled2');
+
+    $('#special').on('click', function () {
+      mySelect.find('option:selected').prop('disabled', true);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#special2').on('click', function () {
+      mySelect.find('option:disabled').prop('disabled', false);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#basic2').selectpicker({
+      liveSearch: true,
+      maxOptions: 1
+    });
+  });
+//sign up jQuery
+$(document).ready(function(){
+		var register = function() {
+		var id = $('input[name = "id"]').val();
+		var pw = $('input[name = "pw"]').val();
+		if(id.trim() == null || id.trim() == '') {
+			$('#idSpan').text('id는 필수입니다.');
+		return;
+		}
+	};
+	/////
+	var checkId = function() {
+		var id = $(this).val();
+		if(id.length < 4 || id.length > 10){
+			$('#idSpan').text('4~10자리입니다.');
+		}else{
+			$('#idSpan').text('유효한 아이디 입니다.');
+		}
+	
+	};
+	
+	var checkPw = function() {
+		var pw = $(this).val();
+		var exp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{6,8}$/;
+		if(pw.match(exp)){
+			$('#pwdSpan').text('유효한 비밀번호 입니다.');
+		}else{
+			$('#pwdSpan').text('특수문자, 소문자, 대문자, 숫자 를 포함한 6~8 비밀번호를 만들어 주세요.');
+		}
+	};
+	
+	var recheckPw =  function() {
+		var repw = $(this).val();
+		var pw = $('input[name="pw"]').val();
+		if(repw==pw){
+			$('#repwSpan').text(' 비밀번호가 일치합니다.');
+		}else {
+			$('#repwSpan').text(' 비밀번호가 일치하지 않습니다.');
+		}
+	};
+		
+		$('input[name="sign_up"]').click(register);
+		$('input[name="id"]').keyup(checkId);
+		$('input[name="pw"]').keyup(checkPw);
+		$('input[name="repw"]').keyup(recheckPw);	
+});
+
+</script>
+<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+<link href="css/jquery.uls.css" rel="stylesheet"/>
+<link href="css/jquery.uls.grid.css" rel="stylesheet"/>
+<link href="css/jquery.uls.lcd.css" rel="stylesheet"/>
+<!-- Source -->
+<script src="js/jquery.uls.data.js"></script>
+<script src="js/jquery.uls.data.utils.js"></script>
+<script src="js/jquery.uls.lcd.js"></script>
+<script src="js/jquery.uls.languagefilter.js"></script>
+<script src="js/jquery.uls.regionfilter.js"></script>
+<script src="js/jquery.uls.core.js"></script>
+<script>
+			$( document ).ready( function() {
+				$( '.uls-trigger' ).uls( {
+					onSelect : function( language ) {
+						var languageName = $.uls.data.getAutonym( language );
+						$( '.uls-trigger' ).text( languageName );
+					},
+					quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
+				} );
+			} );
+		</script>
+		
+</head>
+<body>
+<div class="header">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html"><span>Sa</span>zuA</a>
+			</div>
+			<div class="header-right">
+			<a class="account" href="login.html">My Account</a>
+			<span class="active uls-trigger">Select language</span>
+	<!-- Large modal -->
+			<div class="selectregion">
+				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+				Select Your Region</button>
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+					aria-hidden="true">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+										&times;</button>
+									<h4 class="modal-title" id="myModalLabel">
+										Please Choose Your Location</h4>
+								</div>
+								<div class="modal-body">
+									 <form class="form-horizontal" role="form">
+										<div class="form-group">
+											<select id="basic2" class="show-tick form-control" multiple>
+												<optgroup label="Popular Cities">
+													<option selected style="display:none;color:#eee;">Select City</option>
+													<option>Birmingham</option>
+													<option>Anchorage</option>
+													<option>Phoenix</option>
+													<option>Little Rock</option>
+													<option>Los Angeles</option>
+													<option>Denver</option>
+													<option>Bridgeport</option>
+													<option>Wilmington</option>
+													<option>Jacksonville</option>
+													<option>Atlanta</option>
+													<option>Honolulu</option>
+													<option>Boise</option>
+													<option>Chicago</option>
+													<option>Indianapolis</option>
+												</optgroup>
+												<optgroup label="More Cities">
+													<optgroup label="Alabama">
+														<option>Birmingham</option>
+														<option>Montgomery</option>
+														<option>Mobile</option>
+														<option>Huntsville</option>
+														<option>Tuscaloosa</option>
+													</optgroup>
+													<optgroup label="Alaska">
+														<option>Anchorage</option>
+														<option>Fairbanks</option>
+														<option>Juneau</option>
+														<option>Sitka</option>
+														<option>Ketchikan</option>
+													</optgroup>
+													<optgroup label="Arizona">
+														<option>Phoenix</option>
+														<option>Tucson</option>
+														<option>Mesa</option>
+														<option>Chandler</option>
+														<option>Glendale</option>
+													</optgroup>
+													<optgroup label="Arkansas">
+														<option>Little Rock</option>
+														<option>Fort Smith</option>
+														<option>Fayetteville</option>
+														<option>Springdale</option>
+														<option>Jonesboro</option>
+													</optgroup>
+													<optgroup label="California">
+														<option>Los Angeles</option>
+														<option>San Diego</option>
+														<option>San Jose</option>
+														<option>San Francisco</option>
+														<option>Fresno</option>
+													</optgroup>
+													<optgroup label="Colorado">
+														<option>Denver</option>
+														<option>Colorado</option>
+														<option>Aurora</option>
+														<option>Fort Collins</option>
+														<option>Lakewood</option>
+													</optgroup>
+													<optgroup label="Connecticut">
+														<option>Bridgeport</option>
+														<option>New Haven</option>
+														<option>Hartford</option>
+														<option>Stamford</option>
+														<option>Waterbury</option>
+													</optgroup>
+													<optgroup label="Delaware">
+														<option>Wilmington</option>
+														<option>Dover</option>
+														<option>Newark</option>
+														<option>Bear</option>
+														<option>Middletown</option>
+													</optgroup>
+													<optgroup label="Florida">
+														<option>Jacksonville</option>
+														<option>Miami</option>
+														<option>Tampa</option>
+														<option>St. Petersburg</option>
+														<option>Orlando</option>
+													</optgroup>
+													<optgroup label="Georgia">
+														<option>Atlanta</option>
+														<option>Augusta</option>
+														<option>Columbus</option>
+														<option>Savannah</option>
+														<option>Athens</option>
+													</optgroup>
+													<optgroup label="Hawaii">
+														<option>Honolulu</option>
+														<option>Pearl City</option>
+														<option>Hilo</option>
+														<option>Kailua</option>
+														<option>Waipahu</option>
+													</optgroup>
+													<optgroup label="Idaho">
+														<option>Boise</option>
+														<option>Nampa</option>
+														<option>Meridian</option>
+														<option>Idaho Falls</option>
+														<option>Pocatello</option>
+													</optgroup>
+													<optgroup label="Illinois">
+														<option>Chicago</option>
+														<option>Aurora</option>
+														<option>Rockford</option>
+														<option>Joliet</option>
+														<option>Naperville</option>
+													</optgroup>
+													<optgroup label="Indiana">
+														<option>Indianapolis</option>
+														<option>Fort Wayne</option>
+														<option>Evansville</option>
+														<option>South Bend</option>
+														<option>Hammond</option>														       
+													</optgroup>
+													<optgroup label="Iowa">
+														<option>Des Moines</option>
+														<option>Cedar Rapids</option>
+														<option>Davenport</option>
+														<option>Sioux City</option>
+														<option>Waterloo</option>       													
+													</optgroup>
+													<optgroup label="Kansas">
+														<option>Wichita</option>
+														<option>Overland Park</option>
+														<option>Kansas City</option>
+														<option>Topeka</option>
+														<option>Olathe  </option>            													
+													</optgroup>
+													<optgroup label="Kentucky">
+														<option>Louisville</option>
+														<option>Lexington</option>
+														<option>Bowling Green</option>
+														<option>Owensboro</option>
+														<option>Covington</option>        														
+													</optgroup>
+													<optgroup label="Louisiana">
+														<option>New Orleans</option>
+														<option>Baton Rouge</option>
+														<option>Shreveport</option>
+														<option>Metairie</option>
+														<option>Lafayette</option>          														
+													</optgroup>
+													<optgroup label="Maine">
+														<option>Portland</option>
+														<option>Lewiston</option>
+														<option>Bangor</option>
+														<option>South Portland</option>
+														<option>Auburn</option>         														
+													</optgroup>
+													<optgroup label="Maryland">
+														<option>Baltimore</option>
+														<option>Frederick</option>
+														<option>Rockville</option>
+														<option>Gaithersburg</option>
+														<option>Bowie</option>         														
+													</optgroup>
+													<optgroup label="Massachusetts">
+														<option>Boston</option>
+														<option>Worcester</option>
+														<option>Springfield</option>
+														<option>Lowell</option>
+														<option>Cambridge</option>  
+													</optgroup>
+													<optgroup label="Michigan">
+														<option>Detroit</option>
+														<option>Grand Rapids</option>
+														<option>Warren</option>
+														<option>Sterling Heights</option>
+														<option>Lansing</option> 
+													</optgroup>
+													<optgroup label="Minnesota">
+														<option>Minneapolis</option>
+														<option>St. Paul</option>
+														<option>Rochester</option>
+														<option>Duluth</option>
+														<option>Bloomington</option>      														
+													</optgroup>
+													<optgroup label="Mississippi">
+														<option>Jackson</option>
+														<option>Gulfport</option>
+														<option>Southaven</option>
+														<option>Hattiesburg</option>
+														<option>Biloxi</option>         														
+													</optgroup>
+													<optgroup label="Missouri">
+														<option>Kansas City</option>
+														<option>St. Louis</option>
+														<option>Springfield</option>
+														<option>Independence</option>
+														<option>Columbia</option>            														
+													</optgroup>
+													<optgroup label="Montana">
+														<option>Billings</option>
+														<option>Missoula</option>
+														<option>Great Falls</option>
+														<option>Bozeman</option>
+														<option>Butte-Silver Bow</option>         														
+													</optgroup>
+													<optgroup label="Nebraska">
+														<option>Omaha</option>
+														<option>Lincoln</option>
+														<option>Bellevue</option>
+														<option>Grand Island</option>
+														<option>Kearney</option>        													
+													</optgroup>
+													<optgroup label="Nevada">
+														<option>Las Vegas</option>
+														<option>Henderson</option>
+														<option>North Las Vegas</option>
+														<option>Reno</option>
+														<option>Sunrise Manor</option>            													
+													</optgroup>
+													<optgroup label="New Hampshire">
+														<option>Manchesters</option>
+														<option>Nashua</option>
+														<option>Concord</option>
+														<option>Dover</option>
+														<option>Rochester</option>              													
+													</optgroup>
+													<optgroup label="New Jersey">
+														<option>Newark</option>
+														<option>Jersey City</option>
+														<option>Paterson</option>
+														<option>Elizabeth</option>
+														<option>Edison</option> 
+													</optgroup>
+													<optgroup label="New Mexico">
+														<option>Albuquerque</option>
+														<option>Las Cruces</option>
+														<option>Rio Rancho</option>
+														<option>Santa Fe</option>
+														<option>Roswell</option>       
+													</optgroup>
+													<optgroup label="New York">
+														<option>New York</option>
+														<option>Buffalo</option>
+														<option>Rochester</option>
+														<option>Yonkers</option>
+														<option>Syracuse</option>        														
+													</optgroup>
+													<optgroup label="North Carolina">
+														<option>Charlotte</option>
+														<option>Raleigh</option>
+														<option>Greensboro</option>
+														<option>Winston-Salem</option>
+														<option>Durham</option>          														
+													</optgroup>
+													<optgroup label="North Dakota">
+														<option>Fargo</option>
+														<option>Bismarck</option>
+														<option>Grand Forks</option>
+														<option>Minot</option>
+														<option>West Fargo</option>
+													</optgroup>
+													<optgroup label="Ohio">
+														<option>Columbus</option>
+														<option>Cleveland</option>
+														<option>Cincinnati</option>
+														<option>Toledo</option>
+														<option>Akron</option>      
+													</optgroup>
+													<optgroup label="Oklahoma">
+														<option>Oklahoma City</option>
+														<option>Tulsa</option>
+														<option>Norman</option>
+														<option>Broken Arrow</option>
+														<option>Lawton</option>        														
+													</optgroup>
+													<optgroup label="Oregon">
+														<option>Portland</option>
+														<option>Eugene</option>
+														<option>Salem</option>
+														<option>Gresham</option>
+														<option>Hillsboro</option>          														
+													</optgroup>
+													<optgroup label="Pennsylvania">
+														<option>Philadelphia</option>
+														<option>Pittsburgh</option>
+														<option>Allentown</option>
+														<option>Erie</option>
+														<option>Reading</option>         														
+													</optgroup>
+													<optgroup label="Rhode Island">
+														<option>Providence</option>
+														<option>Warwick</option>
+														<option>Cranston</option>
+														<option>Pawtucket</option>
+														<option>East Providence</option>   
+													</optgroup>
+													<optgroup label="South Carolina">
+														<option>Columbia</option>
+														<option>Charleston</option>
+														<option>North Charleston</option>
+														<option>Mount Pleasant</option>
+														<option>Rock Hill</option> 
+													</optgroup>
+													<optgroup label="South Dakota">
+														<option>Sioux Falls</option>
+														<option>Rapid City</option>
+														<option>Aberdeen</option>
+														<option>Brookings</option>
+														<option>Watertown</option> 
+													</optgroup>
+													<optgroup label="Tennessee">
+														<option>Memphis</option>
+														<option>Nashville</option>
+														<option>Knoxville</option>
+														<option>Chattanooga</option>
+														<option>Clarksville</option>       
+													</optgroup>
+													<optgroup label="Texas">
+														<option>Houston</option>
+														<option>San Antonio</option>
+														<option>Dallas</option>
+														<option>Austin</option>
+														<option>Fort Worth</option>   
+													</optgroup>
+													<optgroup label="Utah">
+														<option>Salt Lake City</option>
+														<option>West Valley City</option>
+														<option>Provo</option>
+														<option>West Jordan</option>
+														<option>Orem</option>   
+													</optgroup>	
+													<optgroup label="Vermont">
+														<option>Burlington</option>
+														<option>Essex</option>
+														<option>South Burlington</option>
+														<option>Colchester</option>
+														<option>Rutland</option>   
+													</optgroup>
+													<optgroup label="Virginia">
+														<option>Virginia Beach</option>
+														<option>Norfolk</option>
+														<option>Chesapeake</option>
+														<option>Arlington</option>
+														<option>Richmond</option> 
+													</optgroup>	
+													<optgroup label="Washington">
+														<option>Seattle</option>
+														<option>Spokane</option>
+														<option>Tacoma</option>
+														<option>Vancouver</option>
+														<option>Bellevue</option> 
+													</optgroup>	
+													<optgroup label="West Virginia">
+														<option>Charleston</option>
+														<option>Huntington</option>
+														<option>Parkersburg</option>
+														<option>Morgantown</option>
+														<option>Wheeling</option> 
+													</optgroup>	
+													<optgroup label="Wisconsin">
+														<option>Milwaukee</option>
+														<option>Madison</option>
+														<option>Green Bay</option>
+														<option>Kenosha</option>
+														<option>Racine</option>
+													</optgroup>
+													<optgroup label="Wyoming">
+														<option>Cheyenne</option>
+														<option>Casper</option>
+														<option>Laramie</option>
+														<option>Gillette</option>
+														<option>Rock Springs</option>
+													</optgroup>			
+												</optgroup>
+											</select>
+										</div>
+									  </form>    
+								</div>
+							</div>
+						</div>
+					</div>
+				<script>
+				$('#myModal').modal('');
+				</script>
+			</div>
+		</div>
+		</div>
+	</div>
+	 <section>
+			<div id="page-wrapper" class="sign-in-wrapper">
+				<div class="graphs">
+					<div class="sign-up">
+						<h1>Create an account</h1>
+						<p class="creating">살까 말까 하면 사즈아~~~! 존버해도 이보다 싼 가격 없다 !!! 
+						혹한다면 두 번 고민 말고 사즈아~ SazuA</p>
+						<h2>Personal Information</h2>
+						<!--  signg up page  -->
+						<form name="rform" method="post" >
+							<table>
+								<tr height="10" bgcolor="#01A185">
+									<td colspan="2"></td>
+								</tr>
+								<tr>
+									<th>이름</th>
+									<td><input type="text" name="mname"></td>
+								</tr>
+								<tr>
+									<th>주민등록번호</th>
+									<td><input type="text" name="jumin_1"> - <input
+										type="password" name="jumin_2"></td>
+								</tr>
+								<tr>
+									<th>아이디</th>
+									<td><input type="text" name="id"> <span id="idSpan"></span></td>
+								</tr>
+								<tr>
+									<th>비밀번호</th>
+									<td><input type="password" name="pw"> <span id="pwdSpan"></span></td>
+								</tr>
+								<tr>
+									<th>비밀번호 확인</th>
+									<td><input type="password" name="repw"><span id="repwSpan"></span></td>
+								</tr>
+								<tr>
+									<th>비밀번호 힌트/답변</th>
+									<td><select name='pwhint' size='1' class='select'>
+											<option value=''>선택하세요</option>
+											<option value='30'>졸업한 초등학교 이름은?</option>
+											<option value='31'>제일 친한 친구의 핸드폰 번호는?</option>
+											<option value='32'>아버지 성함은?</option>
+											<option value='33'>어머니 성함은?</option>
+											<option value='34'>어릴 적 내 별명은?</option>
+											<option value='35'>가장 아끼는 물건은?</option>
+											<option value='36'>좋아하는 동물은?</option>
+											<option value='37'>좋아하는 색깔은?</option>
+											<option value='38'>좋아하는 음식은?</option>
+									</select>
+								</tr>
+								<tr>
+								
+									<th>답변</th>
+									<td><input type='text' name='pwhintans'></td>
+								</tr>
+								<tr>
+									<th>이메일</th>
+									<td><input type='text' name="email"> @ 
+									<input type='text' name="email_dns"> 
+									</td>
+								</tr>
+								<tr>
+									<th>주소</th>
+									<td><input type="text" name="zipcode1"> - 
+									<input type="text" name="zip_h_2"> 
+									<input type="text" name="addr_h1">
+									</td>
+													
+								</tr>
+								<tr>
+									<th>상세 주소</th>
+									<td>
+									<input type="text" name="addr_h2">
+									</td>
+								</tr>
+								<tr>
+									<th>전화번호</th>
+									<td><input type="text" name="cel1"> - <input
+										type="text" name="cel2_1" title="전화번호"> - <input
+										type="text" name="cel2_2"></td>
+								</tr>
+								<tr>
+									<th>핸드폰 번호</th>
+									<td><input type="text" name="tel_h1"> - <input
+										type="text" name="tel_h2_1"> - <input type="text"
+										name="tel_h2_2"></td>
+								</tr>
+								<tr>
+									<th>직업</th>
+									<td><select name='job' size='1'>
+											<option value=''>선택하세요</option>
+											<option value='39'>학생</option>
+											<option value='40'>컴퓨터/인터넷</option>
+											<option value='41'>언론</option>
+											<option value='42'>공무원</option>
+											<option value='43'>군인</option>
+											<option value='44'>서비스업</option>
+											<option value='45'>교육</option>
+											<option value='46'>금융/증권/보험업</option>
+											<option value='47'>유통업</option>
+											<option value='48'>예술</option>
+											<option value='49'>의료</option>
+									</select></td>
+								</tr>
+								<tr>
+									<th>메일/sns 정보 수신</th>
+									<td class="s"><input type="radio" name="chk_mail" checked>
+										수신 <input type="radio" name="chk_mail" value="4"> 수신거부</td>
+								</tr>
+								<tr>
+									<th>관심분야</th>
+									<td><input type='checkbox' name='interest' value='17'> 경제 
+										<input type='checkbox' name='interest' value='18'> 문학
+										<input type='checkbox' name='interest' value='19'> 시사 
+										<input type='checkbox' name='interest' value='20'> IT
+										<input type='checkbox' name='interest' value='21'> 역사
+										<input type='checkbox' name='interest' value='22'> 이성</td>
+								</tr>
+								<tr>
+									<th>가입경로</th>
+									<td><select name='location' size='1'>
+											<option value=''>선택하세요</option>
+											<option value='23'>네이버검색</option>
+											<option value='24'>다음검색</option>
+											<option value='25'>기타검색엔진</option>
+											<option value='26'>카페or동호회를 통해</option>
+											<option value='27'>지인의소개</option>
+											<option value='28'>알빠야?</option>
+									</select></td>
+								</tr>
+					
+								<tr>
+									<th>정보공개여부</th>
+									<td><select name='chk_open' size='0'>
+											<option value=''>선택하세요</option>
+											<option value='5'>모두공개</option>
+											<option value='6'>비공개</option>
+									</select></td>
+								</tr>
+					
+								<tr height="10" bgcolor="#01A185">
+									<td colspan="2"></td>
+								</tr>
+								<tr>
+									<td colspan="2" align="center">
+									<input type="button" name ="sign_up" value="Sign up"> 	
+									<input type="reset" value="Reset"></td>
+								</tr>
+							</table>
+							
+						</form>
+						<!--  -->
+						<div class="sub_home">
+						<!-- <div class="sub_home_left">
+								<form>
+									<input type="submit" value="Create">
+								</form>
+							</div> -->
+							<div class="sub_home_right">
+								<p>Go Back to <a href="index.html">Home</a></p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--footer section start-->
+			<footer class="diff">
+			   <p class="text-center">&copy 2018 SazuA. All Rights Reserved | Design by 조갱 & 쭈현 <a href="http://70.12.111.135/IU/%EC%95%84%EC%9D%B4%EC%9C%A0/web/index.html" target="_blank">쭈현이 Her.</a></p>
+			</footer>
+        <!--footer section end-->
+	</section>
+</body>
+</html>

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Location-Policy</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-select.css">
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Resale Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<!--fonts-->
+<link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!--//fonts-->	
+<!-- js -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+<!-- js -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-select.js"></script>
+<script>
+  $(document).ready(function () {
+    var mySelect = $('#first-disabled2');
+
+    $('#special').on('click', function () {
+      mySelect.find('option:selected').prop('disabled', true);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#special2').on('click', function () {
+      mySelect.find('option:disabled').prop('disabled', false);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#basic2').selectpicker({
+      liveSearch: true,
+      maxOptions: 1
+    });
+  });
+</script>
+<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+<link href="css/jquery.uls.css" rel="stylesheet"/>
+<link href="css/jquery.uls.grid.css" rel="stylesheet"/>
+<link href="css/jquery.uls.lcd.css" rel="stylesheet"/>
+<!-- Source -->
+<script src="js/jquery.uls.data.js"></script>
+<script src="js/jquery.uls.data.utils.js"></script>
+<script src="js/jquery.uls.lcd.js"></script>
+<script src="js/jquery.uls.languagefilter.js"></script>
+<script src="js/jquery.uls.regionfilter.js"></script>
+<script src="js/jquery.uls.core.js"></script>
+<script>
+			$( document ).ready( function() {
+				$( '.uls-trigger' ).uls( {
+					onSelect : function( language ) {
+						var languageName = $.uls.data.getAutonym( language );
+						$( '.uls-trigger' ).text( languageName );
+					},
+					quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
+				} );
+			} );
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css " />
+    <script src="js/easyResponsiveTabs.js"></script>
+    <!-- map by jh -->
+<style>
+	#map{
+		margin: 0 auto;
+		width : 150px;
+		height : 150px;
+	}
+	#moneypolicies{
+		margin: 0 auto;
+		width : 80em;
+		height : 80em;
+	}
+</style>
+<script>
+$(document).ready(function() {
+	var point = new google.maps.LatLng(37.501319, 127.039662);
+	var map = new google.maps.Map(document.querySelector('#map'),{
+		zoom:17,
+		center:point
+	});
+	var marker = new google.maps.Marker({
+		position : point,
+		map : map,
+		animation:google.maps.Animation.DROP
+	});
+});
+</script>
+<!--================================ -->
+</head>
+<body>
+<div class="header">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html"><span>Sa</span>zuA</a>
+			</div>
+			<div class="header-right">
+			<a class="account" href="login.html">My Account</a>
+			<span class="active uls-trigger">Select language</span>
+	<!-- Large modal -->
+			<div class="selectregion">
+				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+				Select Your Region</button>
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+					aria-hidden="true">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+										&times;</button>
+									<h4 class="modal-title" id="myModalLabel">
+										Please Choose Your Location</h4>
+								</div>
+								<div class="modal-body">
+									 <form class="form-horizontal" role="form">
+										<div class="form-group">
+											<select id="basic2" class="show-tick form-control" multiple>
+												<optgroup label="Popular Cities">
+													<option selected style="display:none;color:#eee;">Select City</option>
+													<option>Birmingham</option>
+													<option>Anchorage</option>
+													<option>Phoenix</option>
+													<option>Little Rock</option>
+													<option>Los Angeles</option>
+													<option>Denver</option>
+													<option>Bridgeport</option>
+													<option>Wilmington</option>
+													<option>Jacksonville</option>
+													<option>Atlanta</option>
+													<option>Honolulu</option>
+													<option>Boise</option>
+													<option>Chicago</option>
+													<option>Indianapolis</option>
+												</optgroup>
+												<optgroup label="More Cities">
+													<optgroup label="Alabama">
+														<option>Birmingham</option>
+														<option>Montgomery</option>
+														<option>Mobile</option>
+														<option>Huntsville</option>
+														<option>Tuscaloosa</option>
+													</optgroup>
+													<optgroup label="Alaska">
+														<option>Anchorage</option>
+														<option>Fairbanks</option>
+														<option>Juneau</option>
+														<option>Sitka</option>
+														<option>Ketchikan</option>
+													</optgroup>
+													<optgroup label="Arizona">
+														<option>Phoenix</option>
+														<option>Tucson</option>
+														<option>Mesa</option>
+														<option>Chandler</option>
+														<option>Glendale</option>
+													</optgroup>
+													<optgroup label="Arkansas">
+														<option>Little Rock</option>
+														<option>Fort Smith</option>
+														<option>Fayetteville</option>
+														<option>Springdale</option>
+														<option>Jonesboro</option>
+													</optgroup>
+													<optgroup label="California">
+														<option>Los Angeles</option>
+														<option>San Diego</option>
+														<option>San Jose</option>
+														<option>San Francisco</option>
+														<option>Fresno</option>
+													</optgroup>
+													<optgroup label="Colorado">
+														<option>Denver</option>
+														<option>Colorado</option>
+														<option>Aurora</option>
+														<option>Fort Collins</option>
+														<option>Lakewood</option>
+													</optgroup>
+													<optgroup label="Connecticut">
+														<option>Bridgeport</option>
+														<option>New Haven</option>
+														<option>Hartford</option>
+														<option>Stamford</option>
+														<option>Waterbury</option>
+													</optgroup>
+													<optgroup label="Delaware">
+														<option>Wilmington</option>
+														<option>Dover</option>
+														<option>Newark</option>
+														<option>Bear</option>
+														<option>Middletown</option>
+													</optgroup>
+													<optgroup label="Florida">
+														<option>Jacksonville</option>
+														<option>Miami</option>
+														<option>Tampa</option>
+														<option>St. Petersburg</option>
+														<option>Orlando</option>
+													</optgroup>
+													<optgroup label="Georgia">
+														<option>Atlanta</option>
+														<option>Augusta</option>
+														<option>Columbus</option>
+														<option>Savannah</option>
+														<option>Athens</option>
+													</optgroup>
+													<optgroup label="Hawaii">
+														<option>Honolulu</option>
+														<option>Pearl City</option>
+														<option>Hilo</option>
+														<option>Kailua</option>
+														<option>Waipahu</option>
+													</optgroup>
+													<optgroup label="Idaho">
+														<option>Boise</option>
+														<option>Nampa</option>
+														<option>Meridian</option>
+														<option>Idaho Falls</option>
+														<option>Pocatello</option>
+													</optgroup>
+													<optgroup label="Illinois">
+														<option>Chicago</option>
+														<option>Aurora</option>
+														<option>Rockford</option>
+														<option>Joliet</option>
+														<option>Naperville</option>
+													</optgroup>
+													<optgroup label="Indiana">
+														<option>Indianapolis</option>
+														<option>Fort Wayne</option>
+														<option>Evansville</option>
+														<option>South Bend</option>
+														<option>Hammond</option>														       
+													</optgroup>
+													<optgroup label="Iowa">
+														<option>Des Moines</option>
+														<option>Cedar Rapids</option>
+														<option>Davenport</option>
+														<option>Sioux City</option>
+														<option>Waterloo</option>       													
+													</optgroup>
+													<optgroup label="Kansas">
+														<option>Wichita</option>
+														<option>Overland Park</option>
+														<option>Kansas City</option>
+														<option>Topeka</option>
+														<option>Olathe  </option>            													
+													</optgroup>
+													<optgroup label="Kentucky">
+														<option>Louisville</option>
+														<option>Lexington</option>
+														<option>Bowling Green</option>
+														<option>Owensboro</option>
+														<option>Covington</option>        														
+													</optgroup>
+													<optgroup label="Louisiana">
+														<option>New Orleans</option>
+														<option>Baton Rouge</option>
+														<option>Shreveport</option>
+														<option>Metairie</option>
+														<option>Lafayette</option>          														
+													</optgroup>
+													<optgroup label="Maine">
+														<option>Portland</option>
+														<option>Lewiston</option>
+														<option>Bangor</option>
+														<option>South Portland</option>
+														<option>Auburn</option>         														
+													</optgroup>
+													<optgroup label="Maryland">
+														<option>Baltimore</option>
+														<option>Frederick</option>
+														<option>Rockville</option>
+														<option>Gaithersburg</option>
+														<option>Bowie</option>         														
+													</optgroup>
+													<optgroup label="Massachusetts">
+														<option>Boston</option>
+														<option>Worcester</option>
+														<option>Springfield</option>
+														<option>Lowell</option>
+														<option>Cambridge</option>  
+													</optgroup>
+													<optgroup label="Michigan">
+														<option>Detroit</option>
+														<option>Grand Rapids</option>
+														<option>Warren</option>
+														<option>Sterling Heights</option>
+														<option>Lansing</option> 
+													</optgroup>
+													<optgroup label="Minnesota">
+														<option>Minneapolis</option>
+														<option>St. Paul</option>
+														<option>Rochester</option>
+														<option>Duluth</option>
+														<option>Bloomington</option>      														
+													</optgroup>
+													<optgroup label="Mississippi">
+														<option>Jackson</option>
+														<option>Gulfport</option>
+														<option>Southaven</option>
+														<option>Hattiesburg</option>
+														<option>Biloxi</option>         														
+													</optgroup>
+													<optgroup label="Missouri">
+														<option>Kansas City</option>
+														<option>St. Louis</option>
+														<option>Springfield</option>
+														<option>Independence</option>
+														<option>Columbia</option>            														
+													</optgroup>
+													<optgroup label="Montana">
+														<option>Billings</option>
+														<option>Missoula</option>
+														<option>Great Falls</option>
+														<option>Bozeman</option>
+														<option>Butte-Silver Bow</option>         														
+													</optgroup>
+													<optgroup label="Nebraska">
+														<option>Omaha</option>
+														<option>Lincoln</option>
+														<option>Bellevue</option>
+														<option>Grand Island</option>
+														<option>Kearney</option>        													
+													</optgroup>
+													<optgroup label="Nevada">
+														<option>Las Vegas</option>
+														<option>Henderson</option>
+														<option>North Las Vegas</option>
+														<option>Reno</option>
+														<option>Sunrise Manor</option>            													
+													</optgroup>
+													<optgroup label="New Hampshire">
+														<option>Manchesters</option>
+														<option>Nashua</option>
+														<option>Concord</option>
+														<option>Dover</option>
+														<option>Rochester</option>              													
+													</optgroup>
+													<optgroup label="New Jersey">
+														<option>Newark</option>
+														<option>Jersey City</option>
+														<option>Paterson</option>
+														<option>Elizabeth</option>
+														<option>Edison</option> 
+													</optgroup>
+													<optgroup label="New Mexico">
+														<option>Albuquerque</option>
+														<option>Las Cruces</option>
+														<option>Rio Rancho</option>
+														<option>Santa Fe</option>
+														<option>Roswell</option>       
+													</optgroup>
+													<optgroup label="New York">
+														<option>New York</option>
+														<option>Buffalo</option>
+														<option>Rochester</option>
+														<option>Yonkers</option>
+														<option>Syracuse</option>        														
+													</optgroup>
+													<optgroup label="North Carolina">
+														<option>Charlotte</option>
+														<option>Raleigh</option>
+														<option>Greensboro</option>
+														<option>Winston-Salem</option>
+														<option>Durham</option>          														
+													</optgroup>
+													<optgroup label="North Dakota">
+														<option>Fargo</option>
+														<option>Bismarck</option>
+														<option>Grand Forks</option>
+														<option>Minot</option>
+														<option>West Fargo</option>
+													</optgroup>
+													<optgroup label="Ohio">
+														<option>Columbus</option>
+														<option>Cleveland</option>
+														<option>Cincinnati</option>
+														<option>Toledo</option>
+														<option>Akron</option>      
+													</optgroup>
+													<optgroup label="Oklahoma">
+														<option>Oklahoma City</option>
+														<option>Tulsa</option>
+														<option>Norman</option>
+														<option>Broken Arrow</option>
+														<option>Lawton</option>        														
+													</optgroup>
+													<optgroup label="Oregon">
+														<option>Portland</option>
+														<option>Eugene</option>
+														<option>Salem</option>
+														<option>Gresham</option>
+														<option>Hillsboro</option>          														
+													</optgroup>
+													<optgroup label="Pennsylvania">
+														<option>Philadelphia</option>
+														<option>Pittsburgh</option>
+														<option>Allentown</option>
+														<option>Erie</option>
+														<option>Reading</option>         														
+													</optgroup>
+													<optgroup label="Rhode Island">
+														<option>Providence</option>
+														<option>Warwick</option>
+														<option>Cranston</option>
+														<option>Pawtucket</option>
+														<option>East Providence</option>   
+													</optgroup>
+													<optgroup label="South Carolina">
+														<option>Columbia</option>
+														<option>Charleston</option>
+														<option>North Charleston</option>
+														<option>Mount Pleasant</option>
+														<option>Rock Hill</option> 
+													</optgroup>
+													<optgroup label="South Dakota">
+														<option>Sioux Falls</option>
+														<option>Rapid City</option>
+														<option>Aberdeen</option>
+														<option>Brookings</option>
+														<option>Watertown</option> 
+													</optgroup>
+													<optgroup label="Tennessee">
+														<option>Memphis</option>
+														<option>Nashville</option>
+														<option>Knoxville</option>
+														<option>Chattanooga</option>
+														<option>Clarksville</option>       
+													</optgroup>
+													<optgroup label="Texas">
+														<option>Houston</option>
+														<option>San Antonio</option>
+														<option>Dallas</option>
+														<option>Austin</option>
+														<option>Fort Worth</option>   
+													</optgroup>
+													<optgroup label="Utah">
+														<option>Salt Lake City</option>
+														<option>West Valley City</option>
+														<option>Provo</option>
+														<option>West Jordan</option>
+														<option>Orem</option>   
+													</optgroup>	
+													<optgroup label="Vermont">
+														<option>Burlington</option>
+														<option>Essex</option>
+														<option>South Burlington</option>
+														<option>Colchester</option>
+														<option>Rutland</option>   
+													</optgroup>
+													<optgroup label="Virginia">
+														<option>Virginia Beach</option>
+														<option>Norfolk</option>
+														<option>Chesapeake</option>
+														<option>Arlington</option>
+														<option>Richmond</option> 
+													</optgroup>	
+													<optgroup label="Washington">
+														<option>Seattle</option>
+														<option>Spokane</option>
+														<option>Tacoma</option>
+														<option>Vancouver</option>
+														<option>Bellevue</option> 
+													</optgroup>	
+													<optgroup label="West Virginia">
+														<option>Charleston</option>
+														<option>Huntington</option>
+														<option>Parkersburg</option>
+														<option>Morgantown</option>
+														<option>Wheeling</option> 
+													</optgroup>	
+													<optgroup label="Wisconsin">
+														<option>Milwaukee</option>
+														<option>Madison</option>
+														<option>Green Bay</option>
+														<option>Kenosha</option>
+														<option>Racine</option>
+													</optgroup>
+													<optgroup label="Wyoming">
+														<option>Cheyenne</option>
+														<option>Casper</option>
+														<option>Laramie</option>
+														<option>Gillette</option>
+														<option>Rock Springs</option>
+													</optgroup>			
+												</optgroup>
+											</select>
+										</div>
+									  </form>    
+								</div>
+							</div>
+						</div>
+					</div>
+				<script>
+				$('#myModal').modal('');
+				</script>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div class="banner text-center">
+	  <div class="container">    
+			<h1><span class="segment-heading">SazuA</span> </h1>
+			<p>Since 18.02.22 </p>
+			<a href="post-ad.html">상품 등록</a>
+	  </div>
+	</div>
+	<!-- Privacy -->
+	<div class="privacy main-grid-border">
+		<div class="container">
+			<h2 class="head">위치정보 이용약관</h2>
+				<pre id ="moneypolicies">
+					
+제1장 총칙
+제1조 (목적)
+이 약관은 주식회사 이베이코리아(이하 "회사"라고 합니다)가 다음 각 호의 사이트 및 스마트폰 등 이동통신기기를 통해 제공되는 각 모바일 애플리케이션(이하 “사이트 등”이라고 합니다) 을 통하여 제공하는 “위치정보 기반 쇼핑정보 검색” 서비스의 이용과 관련하여 회사와 회원간의 권리와 의무 및 책임사항 등을 규정함을 그 목적으로 합니다.
+
+1. 옥션 사이트 (http://www.auction.co.kr) 및 옥션 모바일 애플리케이션
+2. G마켓 사이트 (http://www.gmarket.co.kr 및 G마켓 모바일 애플리케이션
+3. G9 사이트 (http://www.g9.co.kr) 및 G9 모바일 애플리케이션
+4. STYLAB 사이트 (http://www.stylab.co.kr) 및 STYLAB 모바일 애플리케이션
+5. 그 밖에 회사가 운영하는 인터넷 사이트 및 모바일 애플리케이션
+제2조 (정의)
+가.
+이 약관에서 사용하는 용어의 정의는 다음과 같습니다.
+1.
+“위치정보 기반 쇼핑정보 검색” 서비스: 회원의 모바일 기기로부터 수집한 현 위치 정보를 활용하여 매장 및 상품 정보 등 쇼핑에 유용한 정보를 회사가 사이트 등 을 통하여 회원에게 무상으로 제공하는 관련 제반 서비스를 말합니다
+2.
+회원: 사이트 등의 이용약관을 승인하고 회사와 서비스이용계약을 체결한 자로서 이 약관에 동의한 자를 말합니다.
+나.
+위 가.항에서 정의되지 않은 이 약관상의 용어의 의미는 관계법령, 사이트 등의 이용약관 또는 상관례에 의합니다.
+제3조 (약관의 명시와 개정 등)
+가.
+회사는 이 약관을 회원이 쉽게 알 수 있도록 “위치정보 기반 쇼핑정보 검색” 서비스(이하 “서비스”라고 합니다)가 제공되는 사이트 등의 초기서비스 화면에 게시합니다. 다만, 약관의 내용은 이용자가 연결화면을 통하여 볼 수 있도록 할 수 있습니다.
+나.
+회사는 “약관의 규제에 관한 법률”, “위치정보의 보호 및 이용 등에 관한 법률” 등 관련법령을 위반하지 않는 범위 내에서 이 약관을 개정할 수 있습니다. 회사가 약관을 개정하는 경우에는 개정된 약관의 적용일자 및 개정사유를 명시하여 현행약관과 함께 가.항의 방법으로 그 적용일자 7일 전부터 적용일자 전일까지 공지합니다. 다만, 회원의 권리·의무에 중대한 영향을 주는 변경인 경우에는 그 적용일자 30일 전부터 적용일자 전일까지 공지합니다.
+다.
+회사가 전항에 따라 개정약관을 공지한 경우 회원이 개정약관 적용일자 이전까지 명시적으로 거부의 의사표시를 하지 않은 경우에는 개정약관에 동의한 것으로 봅니다.
+라.
+이 약관에서 정하지 아니한 사항이나 해석에 대해서는 별도의 회사 정책, 관계법령 또는 상관례에 의합니다. 회원은 회사가 제공하는 서비스를 이용함에 있어 관련법령을 모두 준수하여야 하고, 이 약관의 규정을 들어 관련법령 위반에 대한 면책을 주장할 수 없습니다.
+제4조 (회사의 정책 및 서비스)
+가.
+회사는 원활한 “서비스 유지 및 회원의 보호를 위해 별도의 정책 및 내용을 정할 수 있으며, 필요한 경우 이를 변경할 수 있습니다.
+나.
+회원은 회사가 정한 정책을 확인하고 준수하여야 합니다.
+제5조 (서비스의 내용)
+가.
+서비스의 이용 원칙
+1.
+회원은 사이트 등에 게재된 상품가격정보, 기타 상품정보를 자유로이 열람할 수 있습니다.
+2.
+회사는 위 1호에 따른 정보의 열람 서비스를 회원이 효율적으로 이용할 수 있도록 하기 위하여 상품검색 등 다양한 서비스를 제공할 수 있습니다.
+3.
+회사는 회원이 정보열람, 검색 요청시 회원의 현 위치를 이용한 검색결과 또는 주변결과(카페, 음식점, 편의점 등 매장정보, 상품정보 등 이와 관련된 쇼핑정보)를 제시하는 서비스(위치기반서비스)를 제공합니다.
+4.
+위 각 호의 서비스의 이용요금은 무료입니다.
+나.
+서비스의 성격 및 책임의 한계
+1.
+회사가 “서비스를 위해 사이트 등에 게재하는 정보는 회사가 회사와 제휴관계에 있는 자(개인 및 법인), 기타 정보원 등으로부터 제공받거나 수집한 것으로써, 회사는 이러한 정보의 진실성, 타당성, 사실 부합성 또는 객관성 등에 관하여 일체의 책임을 지지 않습니다.
+2.
+사이트 등 상의 정보 열람 서비스는 회원을 포함한 소비자의 합리적인 쇼핑과 물품 등 광고에 도움을 주기 위한 것에 불과하므로, 개개의 물품 거래는 소비자와 판매자 간의 자율적인 결정에 의하여 발생하고 회사는 이러한 거래로 인하여 발생할 수 있는 분쟁에 대하여 일체 개입하지 않습니다.
+다.
+회원은 서비스와 관련하여 회사가 게시하는 약관, 정보 이용규칙 등 기타 회사가 공지하는 사항을 항상 숙지해야 하며, 이를 숙지하지 못해 생기는 불이익은 회원에게 있습니다.
+제6조 (개인위치정보의 이용 또는 제공)
+가.
+회사는 타사업자 또는 이용 고객과의 요금정산 및 민원처리를 위해 위치정보 이용·제공·사실 확인자료를 자동 기록·보존하며, 해당 자료는 1년간 보관합니다.
+나.
+회사는 개인위치정보를 회원이 지정하는 제3자에게 제공하는 경우에는 개인위치정보를 수집한 당해 통신 단말장치 또는 회원의 전자우편주소로 매회 회원에게 제공받는 자, 제공일시 및 제공목적을 즉시 통보합니다. 단, 아래 각 호의 1에 해당하는 경우에는 회원이 미리 특정하여 지정한 통신 단말장치 또는 전자우편주소로 통보합니다.
+1.
+개인위치정보를 수집한 당해 통신단말장치가 문자, 음성 또는 영상의 수신기능을 갖추지 아니한 경우
+2.
+회원이 개인위치정보를 수집한 당해 통신단말장치 외의 통신단말장치 또는 전자 우편주소 등으로 통보할 것을 미리 요청한 경우
+제7조 (개인위치정보주체의 권리)
+가.
+회원은 회사에 대하여 언제든지 개인위치정보를 이용한 위치기반서비스 제공 및 개인위치정보의 제3자 제공에 대한 동의의 전부 또는 일부를 철회할 수 있습니다. 이 경우 회사는 수집한 개인위치정보 및 위치정보 이용, 제공사실 확인자료를 파기합니다.
+나.
+회원은 회사에 대하여 언제든지 개인위치정보의 수집, 이용 또는 제공의 일시적인 중지를 요구할 수 있으며, 회사는 이를 거절할 수 없고 이를 위한 기술적 수단을 갖추고 있습니다.
+다.
+회원은 회사에 대하여 아래 각 호의 자료에 대한 열람 또는 고지를 요구할 수 있고, 당해 자료에 오류가 있는 경우에는 그 정정을 요구할 수 있습니다. 이 경우 회사는 정당한 사유 없이 회원의 요구를 거절할 수 없습니다.
+1.
+본인에 대한 위치정보 수집, 이용, 제공사실 확인자료
+2.
+본인의 개인위치정보가 위치정보의 보호 및 이용 등에 관한 법률 또는 다른 법률 규정에 의하여 제3자에게 제공된 이유 및 내용
+라.
+회원은 제 가.항 내지 제 다.항의 의 권리행사를 위해 회사의 소정의 절차를 통해 요구할 수 있습니다.
+제8조 (법정대리인의 권리)
+가.
+회사는 14세 미만의 회원에 대해서는 개인위치정보를 이용한 위치기반서비스 제공 및 개인위치정보의 제3자 제공에 대한 동의를 당해 회원과 당해 회원의 법정대리인으로부터 동의를 받아야 합니다. 이 경우 법정대리인은 제7조에 의한 회원의 권리를 모두 가집니다.
+나.
+회사는 14세 미만의 아동의 개인위치정보 또는 위치정보 이용·제공사실 확인자료를 이용약관에 명시 또는 고지한 범위를 넘어 이용하거나 제3자에게 제공하고자 하는 경우에는 14세미만의 아동과 그 법정대리인의 동의를 받아야 합니다. 단, 아래의 경우는 제외합니다.
+1.
+위치정보 및 위치기반서비스 제공에 따른 요금정산을 위하여 위치정보 이용, 제공사실 확인자료가 필요한 경우
+2.
+통계작성, 학술연구 또는 시장조사를 위하여 특정 개인을 알아볼 수 없는 형태로 가공하여 제공하는 경우
+제9조 (8세 이하의 아동 등의 보호의무자의 권리)
+가.
+회사는 아래의 경우에 해당하는 자(이하 “8세 이하의 아동”등이라 한다)의 보호의무자가 8세 이하의 아동 등의 생명 또는 신체보호를 위하여 개인위치정보의 이용 또는 제공에 동의하는 경우에는 본인의 동의가 있는 것으로 봅니다.
+1.
+8세 이하의 아동
+2.
+금치산자
+3.
+장애인복지법 제2조제2항제2호의 규정에 의한 정신적 장애를 가진 자로서 장애인고용촉진및직업재활법 제2조제2호의 규정에 의한 중증장애인에 해당하는 자(장애인복지법 제29조의 규정에 의하여 장애인등록을 한 자에 한한다)
+나.
+8세 이하의 아동 등의 생명 또는 신체의 보호를 위하여 개인위치정보의 이용 또는 제공에 동의를 하고자 하는 보호의무자는 서면동의서에 보호의무자임을 증명하는 서면을 첨부하여 회사에 제출하여야 합니다.
+다.
+보호의무자는 8세 이하의 아동 등의 개인위치정보 이용 또는 제공에 동의하는 경우 개인위치정보주체 권리의 전부를 행사할 수 있습니다.
+제10조 (위치정보관리책임자의 지정)
+가.
+회사는 위치정보를 적절히 관리?보호하고 개인위치정보주체의 불만을 원활히 처리할 수 있도록 실질적인 책임을 질 수 있는 지위에 있는 자를 위치정보관리책임자로 지정해 운영합니다.
+나.
+위치정보관리책임자는 위치기반서비스를 제공하는 부서의 부서장으로서 구체적인 사항은 이 약관의 부칙에 따릅니다.
+제11조 (서비스의 성격과 회사의 면책)
+가.
+회사가 회원에게 제공하는 서비스는 회원이 매장 및 상품 정보 등 쇼핑에 유용한 정보를 게재 및 열람하고 이를 통하여 상호간에 상품의 거래와 관련하여 도움을 얻을 수 있도록 정보를 수집 및 게재하는 것에 국한합니다. 회사는 어떠한 경우에도 판매자를 비롯하여 어느 누구도 대리하거나 대행하지 않으며, 재화 등의 판매에 있어서 어떠한 책임도 부담하지 않습니다. 상품의 실제 거래는 회원, 판매자들이 거래당사자로서 독자적 판단으로 수행하고, 성립된 거래와 관련된 책임은 거래당사자들 스스로가 부담하여야 합니다.
+나.
+회사가 위치정보의 보호 및 이용 등에 관한 법률 제15조 내지 제26조의 규정을 위반한 행위로 회원에게 손해가 발생한 경우 회원은 회사에 대하여 손해배상 청구를 할 수 있습니다. 이 경우 회사는 고의, 과실이 없음을 입증하지 못하는 경우 책임을 면할 수 없습니다.
+다.
+회사는 천재지변 또는 이에 준하는 불가항력, 정보통신설비의 보수점검, 교체 또는 고장, 통신의 두절 등으로 인하여 일시적 또는 종국적으로 서비스를 제공할 수 없는 경우, 서비스 제공에 관한 책임이 면제됩니다. 이 경우 회사는 사이트 등의 초기 서비스화면에 게시하거나 기타의 방법으로 회원에게 통지합니다.
+라.
+회사는 회원의 귀책사유로 인한 서비스 이용의 장애에 대하여 책임을 지지 않습니다.
+마.
+회사는 회사 또는 다른 회원이 게재한 정보, 자료, 사실의 정확성 및 신뢰성 등을 보증하지 않으며, 이를 신뢰함으로써 회원 기타 제3자가 입은 손해에 대하여 책임을 지지 않습니다.
+바.
+회사와 판매자의 영업은 각자 독자적으로 운영되며, 회사는 이와 관련하여 일체의 책임을 지지 않습니다.
+제12조 (준거법 및 관할법원)
+이 약관과 관련하여 발생하는 일체의 분쟁은 대한민국 법령을 준거법으로 하며, 회사와 회원간 발생한 분쟁에 관한 소송은 민사소송법상의 관할법원에 제소합니다.
+
+제13조 (기타 조항)
+가.
+회사는 회원이 제기하는 정당한 의견이나 불만을 반영하고 그 문제를 해결하고 회원 상호간의 분쟁을 조정하기 위하여 고객센터를 설치, 운영합니다. 회사는 회원으로부터 제기되는 불만사항 및 의견이 정당하다고 판단되는 경우 이를 신속하게 처리하며, 즉시처리가 곤란한 경우에는 그 사유와 처리기간을 통보합니다.
+나.
+위치정보와 관련된 분쟁에 대하여 당사자간 협의가 이루어지지 아니하거나 협의를 할 수 없는 경우에 개인정보보호법 제43조의 규정에 의한 개인정보 분쟁조정위원회에 조정을 신청할 수 있다.
+					</pre>
+					
+				
+				
+		</div>	
+	</div>
+	<!-- // Privacy -->
+	<!--footer section start-->		
+		<footer>
+			<div class="footer-top">
+				<div class="container">
+					<div class="foo-grids">
+						<div class="col-md-3 footer-grid">
+							<h4 class="footer-head">SazuA</h4>
+							<p>(주) SazuA의 사전 서면 동의 없이 옥션사이트의 일체의 정보, 콘텐츠 및 UI등을 상업적 목적으로 전재, 전송, 스크래핑 등 무단 사용할 수 없습니다.</p>
+							<p>SazuA는 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 옥션은 상품 · 거래정보 및 거래에 대하여 책임을 지지 않습니다.</p>
+						</div>
+						<div class="col-md-3 footer-grid">
+							<h4 class="footer-head">Help</h4>
+							<ul>
+								<li><a href="howitworks.html">How it Works</a></li>						
+								<li><a href="sitemap.html">Sitemap</a></li>
+								<li><a href="faq.html">Faq</a></li>
+								<li><a href="feedback.html">Feedback</a></li>
+								<li><a href="contact.html">Contact</a></li>
+								<li><a href="typography.html">Shortcodes</a></li>
+							</ul>
+						</div>
+						<div class="col-md-3 footer-grid">
+							<h4 class="footer-head">Information</h4>
+							<ul>
+								<li><a href="regions.html">Locations Map</a></li>	
+								<li><a href="terms.html">Terms of Use</a></li>
+								<li><a href="popular-search.html">Popular searches</a></li>	
+								<li><a href="privacy.html">Privacy Policy</a></li>	
+							</ul>
+						</div>
+						<div class="col-md-3 footer-grid">
+							<h4 class="footer-head">Contact Us</h4>
+							<span class="hq">Our headquarters</span>
+							<address>
+								<ul class="location">
+									<li><span class="glyphicon glyphicon-map-marker"></span></li>
+									<li>서울특별시 강남구 테헤란로 212 멀티캠퍼스 1103호</li>
+									<div id = "map"></div>
+									<div class="clearfix"></div>
+								</ul>	
+								<ul class="location">
+									<li><span class="glyphicon glyphicon-earphone"></span></li>
+									 <li>010-5091-9772, 010-2329-5141</li>
+									<div class="clearfix"></div>
+								</ul>	
+								<ul class="location">
+									<li><span class="glyphicon glyphicon-envelope"></span></li>
+									<li><a href="mailto:cna9772@hanmail.net">cna9772@hanmail.net</a></li>
+									<div class="clearfix"></div>
+								</ul>
+														
+							</address>
+						</div>
+						<div class="clearfix"></div>
+					</div>						
+				</div>	
+			</div>	
+			<div class="footer-bottom text-center">
+			<div class="container">
+				<div class="footer-logo">
+					<a href="index.html"><span>Sa</span>zuA</a>
+				</div>
+				<div class="footer-social-icons">
+					<ul>
+						<li><a class="facebook" href="#"><span>Facebook</span></a></li>
+						<li><a class="twitter" href="#"><span>Twitter</span></a></li>
+						<li><a class="flickr" href="#"><span>Flickr</span></a></li>
+						<li><a class="googleplus" href="#"><span>Google+</span></a></li>
+						<li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
+					</ul>
+				</div>
+				<div class="copyrights">
+					<p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		</footer>
+        <!--footer section end-->
+</body>
+</html>
